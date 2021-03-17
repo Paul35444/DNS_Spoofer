@@ -4,7 +4,8 @@ import netfilterqueue
 import scapy.all as scapy
 
 def process_packet():
-    print(packet)
+#get_payload method shows contents of packet
+    print(packet.get_payload())
 #stop packet from going to its dest 
     packet.drop()
 
