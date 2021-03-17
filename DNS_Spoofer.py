@@ -2,6 +2,9 @@
 
 import netfilterqueue
 
+def process_packet():
+
+
 #create instace of queue 
 queue = netfilterqueue.NetfilterQueue()
 #bind queue to queue number 0 and callback to func process_packet
