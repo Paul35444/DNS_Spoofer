@@ -3,7 +3,7 @@
 import netfilterqueue
 
 def process_packet():
-
+    print(packet)
 
 #create instace of queue 
 queue = netfilterqueue.NetfilterQueue()
