@@ -4,8 +4,8 @@ import netfilterqueue
 
 def process_packet():
     print(packet)
-#forward/force packet to its dest 
-    packet.accept()
+#stop packet from going to its dest 
+    packet.drop()
 
 #create instace of queue 
 queue = netfilterqueue.NetfilterQueue()
