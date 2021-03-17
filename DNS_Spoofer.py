@@ -4,9 +4,10 @@ import netfilterqueue
 import scapy.all as scapy
 
 def process_packet():
-    scapy_packet = scapy.IP(packet.get_payload())
 #get_payload method shows contents of packet
-    print()
+    scapy_packet = scapy.IP(packet.get_payload())
+#.show method shows all layers of packet
+    print(scapy_packet.show())
 #stop packet from going to its dest 
     packet.drop()
 
