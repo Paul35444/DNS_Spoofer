@@ -23,6 +23,10 @@ def process_packet():
             del scapy_packet[scapy.IP].chksum
             del scapy_packet[scapy.UDP].chksum
             del scapy_packet[scapy.UDP].len
+
+#set payload (above code) to scapy_packet
+            packet.set_payload(str(scapy_packet))
+
 #.show method shows all layers of packet
         #print(scapy_packet.show())
 #allow packet to its dest 
