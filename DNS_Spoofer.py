@@ -6,10 +6,12 @@ import scapy.all as scapy
 def process_packet():
 #get_payload method shows contents of packet
     scapy_packet = scapy.IP(packet.get_payload())
+#DNSRR is DNS request response
+    if scapy_packet.hasLayer(scapy.DNSRR):
 #.show method shows all layers of packet
-    print(scapy_packet.show())
+        print(scapy_packet.show())
 #stop packet from going to its dest 
-    packet.drop()
+    packet.accept()
 
 #create instace of queue 
 queue = netfilterqueue.NetfilterQueue()
