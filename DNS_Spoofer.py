@@ -8,7 +8,8 @@ def process_packet():
     scapy_packet = scapy.IP(packet.get_payload())
 #DNSRR is DNS request response
     if scapy_packet.hasLayer(scapy.DNSRR):
-        scapy_packet[scapy.DNSQR].qname
+#qname from DNS Question Record is website
+        qname = scapy_packet[scapy.DNSQR].qname
 #.show method shows all layers of packet
         print(scapy_packet.show())
 #allow packet to its dest 
