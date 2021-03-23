@@ -10,7 +10,7 @@ def process_packet():
     if scapy_packet.hasLayer(scapy.DNSRR):
 #.show method shows all layers of packet
         print(scapy_packet.show())
-#stop packet from going to its dest 
+#allow packet to its dest 
     packet.accept()
 
 #create instace of queue 
