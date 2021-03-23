@@ -10,8 +10,10 @@ def process_packet():
     if scapy_packet.hasLayer(scapy.DNSRR):
 #qname from DNS Question Record is website
         qname = scapy_packet[scapy.DNSQR].qname
+        if "www.bing.com" in qname:
+            
 #.show method shows all layers of packet
-        print(scapy_packet.show())
+        #print(scapy_packet.show())
 #allow packet to its dest 
     packet.accept()
 
