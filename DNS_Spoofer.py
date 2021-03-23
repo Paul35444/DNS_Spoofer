@@ -11,6 +11,7 @@ def process_packet():
 #qname from DNS Question Record is website
         qname = scapy_packet[scapy.DNSQR].qname
         if "www.bing.com" in qname:
+            print("[+] Spoofing Target")
             
 #.show method shows all layers of packet
         #print(scapy_packet.show())
