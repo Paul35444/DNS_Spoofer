@@ -18,6 +18,11 @@ def process_packet():
             scapy_packet[scapy.DNS].an = answer
 #only send one answer
             scapy_packet[scapy.DNS].ancount = 1
+#delete checksum and len fields which will be replaced once new packet is sent
+            del scapy_packet[scapy.IP].len
+            del scapy_packet[scapy.IP].chksum
+            del scapy_packet[scapy.UDP].chksum
+            del scapy_packet[scapy.UDP].len
 #.show method shows all layers of packet
         #print(scapy_packet.show())
 #allow packet to its dest 
